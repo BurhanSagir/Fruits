@@ -1,0 +1,36 @@
+Stack<string> st = new Stack<string>();    
+Console.WriteLine("A: Apple");
+Console.WriteLine("O: Orange");
+Console.WriteLine("M: Mango");
+Console.WriteLine("G: Guava");
+Console.WriteLine("E: If you want to eat now the fruit");
+
+do { 
+    Console.Write("Enter your choice: ");
+    string choice = Console.ReadLine();
+    char fruit = char.Parse(choice);
+
+    if (fruit == 'A'){
+        st.Push("Apple");
+    }
+    else if (fruit == 'O'){
+        st.Push("Orange");  
+    }
+    else if (fruit == 'M'){
+        st.Push("Mango");
+    }
+    else if (fruit == 'G'){
+        st.Push("Guava"); 
+    }
+    else if (fruit == 'E'){
+        st.Pop(); 
+        foreach (Object obj in st){
+            Console.WriteLine(obj);
+        }
+    }
+    else {
+        Console.WriteLine("Invalid input");
+    }
+    Console.WriteLine("\nDo you want to try again? (Y/N)");
+}
+while(!Console.ReadLine().Equals('N'));
